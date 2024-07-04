@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Order Management">
+        <div class="slds-m-around_medium">
+            <template if:true={account}>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-2">
+                        <p><strong>Account Name:</strong> {accountName}</p>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <p><strong>Account Number:</strong> {accountNumber}</p>
+                    </div>
+                </div>
+            </template>
+            <template if:false={account}>
+                <p>Loading...</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
+
