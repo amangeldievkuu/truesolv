@@ -3,11 +3,15 @@
         <div class="slds-m-around_medium">
             <template if:true={account}>
                 <div class="slds-grid slds-gutters">
-                    <div class="slds-col slds-size_1-of-2">
+                    <div class="slds-col slds-size_1-of-3">
                         <p><strong>Account Name:</strong> {accountName}</p>
                     </div>
-                    <div class="slds-col slds-size_1-of-2">
+                    <div class="slds-col slds-size_1-of-3">
                         <p><strong>Account Number:</strong> {accountNumber}</p>
+                    </div>
+                    <div class="slds-col slds-size_1-of-3 slds-p-horizontal_large">
+                        <lightning-button label="Create Product" title="Non-primary action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+                        <lightning-button label="Cart" title="Non-primary action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
                     </div>
                 </div>
             </template>

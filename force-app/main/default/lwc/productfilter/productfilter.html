@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="Filter">
+        <div class="slds-p-around_small">
+            <div class="slds-m-bottom_small">
+                <label for="typeFilter">Type</label>
+                <select id="typeFilter" multiple onchange={handleTypeChange}>
+                    <template for:each={typeOptions} for:item="option">
+                        <option key={option.value} value={option.value}>{option.label}</option>
+                    </template>
+                </select>
+            </div>
+            <div>
+                <label for="familyFilter">Family</label>
+                <select id="familyFilter" multiple onchange={handleFamilyChange}>
+                    <template for:each={familyOptions} for:item="option">
+                        <option key={option.value} value={option.value}>{option.label}</option>
+                    </template>
+                </select>
+            </div>
+        </div>
+    </lightning-card>
+</template>

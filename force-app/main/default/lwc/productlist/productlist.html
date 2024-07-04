@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Product List">
+        <div class="slds-p-around_medium">
+            <lightning-input type="text" label="Search Products" onchange={handleSearchChange} placeholder="Search by name or description"></lightning-input>
+        </div>
+        <div class="slds-grid slds-wrap">
+            <template if:true={products}>
+                <template for:each={products} for:item="product">
+                    <div key={product.Id} class="slds-col slds-size_1-of-3 slds-p-around_small">
+                        <c-producttile product={product} onviewdetails={handleViewDetails} onaddtocart={handleAddToCart}></c-producttile>
+                    </div>
+                </template>
+            </template>
+            <template if:false={products}>
+                <p>No products available.</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
