@@ -3,7 +3,6 @@ import getProducts from '@salesforce/apex/ProductController.getProducts';
 import searchProducts from '@salesforce/apex/ProductController.searchProducts';
 
 export default class Productlist extends LightningElement {
-   
     @track products;
     @track error;
 

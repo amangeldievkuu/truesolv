@@ -10,7 +10,12 @@
                         <p><strong>Account Number:</strong> {accountNumber}</p>
                     </div>
                     <div class="slds-col slds-size_1-of-3 slds-p-horizontal_large">
-                        <lightning-button label="Create Product" title="Non-primary action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+                        <template if:true={isManager}>
+                            <lightning-button label="Create Product" onclick={handleCreateProductClick}></lightning-button>
+                        </template>
+                        <template if:true={isCreateProductModalOpen}>
+                            <c-create-product-modal onclose={handleCreateProductModalClose}></c-create-product-modal>
+                        </template>
                         <lightning-button label="Cart" title="Non-primary action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
                     </div>
                 </div>

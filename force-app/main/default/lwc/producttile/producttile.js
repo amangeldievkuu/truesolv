@@ -1,15 +1,16 @@
-import { LightningElement, api } from 'lwc';
+import { LightningElement, api, wire, track } from 'lwc';
 
 export default class Producttile extends LightningElement {
     @api product;
+    @track isModalOpen = false;
 
-    handleDetails() {
-        const detailEvent = new CustomEvent('viewdetails', { detail: this.product });
-        this.dispatchEvent(detailEvent);
+    
+
+    handleDetailsClick() {
+        this.isModalOpen = true;
     }
 
-    handleAdd() {
-        const addEvent = new CustomEvent('addtocart', { detail: this.product });
-        this.dispatchEvent(addEvent);
+    handleModalClose() {
+        this.isModalOpen = false;
     }
 }

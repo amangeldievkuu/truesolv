@@ -4,11 +4,14 @@
         <p>{product.Description__c}</p>
         <div class="slds-grid slds-gutters slds-p-vertical_x-large">
             <div class="slds-col slds-size_1-of-2">
-                <lightning-button label="Details" onclick={handleDetails}></lightning-button>
+                <lightning-button label="Details" onclick={handleDetailsClick}></lightning-button>
             </div>
             <div class="slds-col slds-size_1-of-2">
                 <lightning-button label="Add" onclick={handleAdd}></lightning-button>
             </div>
         </div>
+        <template if:true={isModalOpen}>
+            <c-product-modal product={product} onclose={handleModalClose}></c-product-modal>
+        </template>
     </div>
 </template>
